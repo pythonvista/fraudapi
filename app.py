@@ -26,6 +26,7 @@ class DataModel(BaseModel):
 @app.post("/fraud/predict")
 async def churn_predict(request: Request):
     test_json = await request.json()
+    print(test_json)
    
     if test_json: # there is data
         if isinstance(test_json, dict): # unique example
