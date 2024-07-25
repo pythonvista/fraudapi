@@ -1,10 +1,10 @@
 import joblib
 import pandas as pd
 from fastapi import FastAPI, Request
-from fraud.Fraud import Fraud
+from Fraud import Fraud
 from pydantic import BaseModel
 from typing import List, Dict
-
+import os
 # loading model
 model = joblib.load('./models/model_cycle1.joblib')
 
@@ -26,7 +26,7 @@ class DataModel(BaseModel):
 @app.post("/fraud/predict")
 async def churn_predict(request: Request):
     test_json = await request.json()
-    print(test_json)
+   
    
     if test_json: # there is data
         if isinstance(test_json, dict): # unique example
