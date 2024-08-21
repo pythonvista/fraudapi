@@ -24,7 +24,7 @@ class DataModel(BaseModel):
     isFraud: int
 @app.get("/hello")
 def SayHello():
-    return {msg: "hello"}
+    return {"msg": "hello"}
 
 
 @app.post("/fraud/predict")
