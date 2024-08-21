@@ -22,6 +22,10 @@ class DataModel(BaseModel):
     oldbalance_dest: float
     newbalance_dest: float
     isFraud: int
+@app.get("/hello")
+def SayHello():
+    return {msg: "hello"}
+
 
 @app.post("/fraud/predict")
 async def churn_predict(request: Request):
